@@ -33,25 +33,59 @@
 	<hr />
 
 	<h4>Katarina</h4>
-	<p>Fruitcake bonbon donut jelly-o brownie biscuit marzipan pie.</p>
+	<p id="0">Fruitcake bonbon donut jelly-o brownie biscuit marzipan pie.</p>
 	<img src="../img/kat_1.jpg" /><br/>
 
 	<h4>Red Card Katarina</h4>
-	<p>Cheesecake marzipan cupcake biscuit candy canes pudding.</p>
+	<p id='1'>Cheesecake marzipan cupcake biscuit candy canes pudding.</p>
 	<img src="../img/kat_2.jpg" /><br/>
 
 	<h4>Kitty Cat Katarina</h4>
-	<p>Applicake topping halvah lemon drops wypas cotton candy.</p>
+	<p id ='2'>Applicake topping halvah lemon drops wypas cotton candy.</p>
 	<img src="../img/kat_3.jpg" /><br/>
 
 	<h4>High Command Katarina</h4>
-	<p>Oat cake macaroon souffle cupcake chupa chups chocolate bar bear claw dragee lemon drops.</p>
+	<p id='3'>Oat cake macaroon souffle cupcake chupa chups chocolate bar bear claw dragee lemon drops.</p>
 	<img src="../img/kat_4.jpg" /><br/>
 
 	<hr/>
 
 	<div id="rotator">
-		Rotator Here
+		<h4 id="RotatingTitle"></h4>
+		<p id="RotatingDes"></p>
+		<a id="imageRotator"><img src="Rotating" id="Rotating" border="0" onmouseover="StopRotation();" onmouseout="RotateImages();"/></a>
+		<script type="text/javascript">
+
+		  var currentImage = 0;
+		  function RotateImages()
+		  {
+		    var RotatingImage = document.getElementById('Rotating');
+		    var RotatingTitle = document.getElementById('RotatingTitle');
+		    var RotatingDes = document.getElementById('RotatingDes')
+		    var title = document.getElementsByTagName('h4');
+		    var description = document.getElementById(currentImage);
+		    var image = document.getElementsByTagName('img');
+
+		    RotatingImage.src = image[currentImage].src;
+		    RotatingTitle.textContent = title[currentImage].textContent;
+		    RotatingDes.textContent = description.textContent;
+
+		    currentImage++;
+
+		    if(currentImage === image.length-1)
+		      currentImage = 0;
+
+		    rotator = window.setTimeout("RotateImages(" + (currentImage+1) + ")",3000);
+		  }
+
+		  function StopRotation()
+		  {
+		    window.clearTimeout(rotator);
+		  }
+
+		  RotateImages();
+
+		</script>	
 	</div>
 </div>
 
