@@ -53,37 +53,30 @@
 	<div id="rotator">
 		<h4 id="RotatingTitle"></h4>
 		<p id="RotatingDes"></p>
-		<a id="imageRotator"><img src="Rotating" id="Rotating" border="0" onmouseover="StopRotation();" onmouseout="RotateImages();"/></a>
+		<a id="imageRotator"><img id="Rotating" border="0"/></a>
 		<script type="text/javascript">
 
-		  var currentImage = 0;
-		  function RotateImages()
-		  {
-		    var RotatingImage = document.getElementById('Rotating');
-		    var RotatingTitle = document.getElementById('RotatingTitle');
-		    var RotatingDes = document.getElementById('RotatingDes')
-		    var title = document.getElementsByTagName('h4');
-		    var description = document.getElementById(currentImage);
-		    var image = document.getElementsByTagName('img');
+			var currentImage = 0;
+			function RotateImages(){
+			    var RotatingImage = document.getElementById('Rotating');
+			    var RotatingTitle = document.getElementById('RotatingTitle');
+			    var RotatingDes = document.getElementById('RotatingDes')
+			    var title = document.getElementsByTagName('h4');
+			    var description = document.getElementById(currentImage);
+			    var image = document.getElementsByTagName('img');
 
-		    RotatingImage.src = image[currentImage].src;
-		    RotatingTitle.textContent = title[currentImage].textContent;
-		    RotatingDes.textContent = description.textContent;
+			    RotatingImage.src = image[currentImage].src;
+			    RotatingTitle.textContent = title[currentImage].textContent;
+			    RotatingDes.textContent = description.textContent;
 
-		    currentImage++;
+			    currentImage++;
 
-		    if(currentImage === image.length-1)
-		      currentImage = 0;
+			    if(currentImage === image.length-1)
+			      currentImage = 0;
 
-		    rotator = window.setTimeout("RotateImages(" + (currentImage+1) + ")",3000);
-		  }
-
-		  function StopRotation()
-		  {
-		    window.clearTimeout(rotator);
-		  }
-
-		  RotateImages();
+				window.setTimeout("RotateImages(" + (currentImage+1) + ")",3000);
+			}
+		RotateImages();
 
 		</script>	
 	</div>
