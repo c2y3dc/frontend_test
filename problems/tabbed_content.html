@@ -45,11 +45,11 @@
 			border: 1px solid;
 		}
 
-		.tabContent p:not(:target) {
-			display: none;
+		.tab, .tab:target ~ #window3 {
+		  display: none;
 		}
-		.tabContent p:target {
-			display: block;
+		#window3, .tab:target {
+		  display: block;
 		}
 
 	</style>
@@ -82,17 +82,17 @@
 			</ul>
 			<div class="tabContent">
 
-				<p id="window1">
+				<div class="tab" id="window1">
 					Gingerbread muffin gummies gingerbread macaroon. Lollipop candy applicake toffee faworki. Bear claw topping jelly toffee toffee powder tiramisu candy chupa chups. Chupa chups dragee icing applicake chupa chups dessert. Croissant jelly faworki marzipan tootsie roll marshmallow. Marshmallow toffee sweet roll fruitcake.
-				</p>
+				</div>
 
-				<p id="window2">
+				<div class="tab" id="window2">
 					Chocolate faworki croissant brownie halvah macaroon gummi bears wypas. Chupa chups icing gummies pudding dessert carrot cake. Cupcake jelly beans sweet roll icing ice cream apple pie tootsie roll gummi bears marzipan. Brownie gummies chupa chups pie. Cupcake jujubes topping. 
-				</p>
+				</div>
 
-				<p id="window3">
+				<div class="tab" id="window3">
 					Cheesecake jelly beans ice cream lollipop sweet pastry. Chupa chups dessert cheesecake sesame snaps. Cookie ice cream candy canes pastry cake muffin. Icing chocolate sweet gummi bears powder oat cake oat cake lemon drops.
-				</p>
+				</div>
 			</div>
 		</div>
 	</div>
